@@ -14,8 +14,10 @@
 <script src="${ctx}/js/libs/jquery-1.10.0.js"></script>
 <script src="${ctx}/js/libs/jquery-ui.min.js"></script>
 <script src="${ctx}/js/libs/bootstrap.min.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
 <!-- Style CSS -->
 <link href="${ctx}/css/bootstrap.css" media="screen" rel="stylesheet">
+<link href="${ctx}/css/prettify.css" rel="stylesheet">
 <link href="${ctx}/style.css" media="screen" rel="stylesheet">
 <link href="${ctx}/css/docs.css" media="screen" rel="stylesheet">
 <link rel="stylesheet" href="${ctx}/css/chosen.css">
@@ -32,6 +34,8 @@
 <html>
 <head>
     <title>问答器</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <style>
         .nav li a {
             -moz-user-select: none;
@@ -50,7 +54,7 @@
             $(".nicEdit-main").html("");
         }
         function previous() {
-            var id = currentItem == null ? "" : "/" + currentItem.id;
+            var id = currentItem == null ? "/0" : "/" + currentItem.id;
             $.get(
                     "${ctx}/previous" + id,
                     {},
@@ -58,7 +62,7 @@
             )
         }
         function next() {
-            var id = currentItem == null ? "" : "/" + currentItem.id;
+            var id = currentItem == null ? "/0" : "/" + currentItem.id;
             $.get(
                     "${ctx}/next" + id,
                     {},

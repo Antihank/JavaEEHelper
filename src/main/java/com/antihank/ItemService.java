@@ -21,7 +21,7 @@ public class ItemService {
             i = itemMapper.selectByPrimaryKey(1L);
         } else if (id < l) {
             //当前id小于总数
-            i = itemMapper.selectByPrimaryKey(id + 1);
+            i = itemMapper.selectByPrimaryKey(((long) (id + 1)));
         } else {
             //当前id等于总数
             i = itemMapper.selectByPrimaryKey(1L);
@@ -33,14 +33,14 @@ public class ItemService {
         Item i = null;
         if (id == null || id == 0) {
             int count = itemMapper.selectCount(new Item());
-            i = itemMapper.selectByPrimaryKey(count);
+            i = itemMapper.selectByPrimaryKey(((long) count));
         } else if (id == 1) {
             //当前id==1
             int count = itemMapper.selectCount(new Item());
             i = itemMapper.selectByPrimaryKey(((long) (count)));
         } else if (id > 1) {
             //当前id>1
-            i = itemMapper.selectByPrimaryKey(id - 1);
+            i = itemMapper.selectByPrimaryKey(((long) (id - 1)));
         }
         return i;
     }
