@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  jsp-servlet:
+    init-parameters:
+      development: true
+  tomcat:
+    uri-encoding: UTF-8
+  context-path: /jeeh
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    username: ******
+    password: ******
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jeeh?useUnicode=true&amp;characterEncoding=UTF-8
+debug: true
